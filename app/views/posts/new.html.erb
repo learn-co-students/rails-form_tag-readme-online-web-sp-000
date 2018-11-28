@@ -1,0 +1,11 @@
+<%= form_tag posts_path do %>
+  <label>Post title:</label><br>
+  <%= text_field_tag :'post[title]' %><br>
+
+  <label>Post description:</label><br>
+  <%= text_area_tag :'post[description]' %><br>
+
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>        <!-- :authenticity_token was the name attribute, form_authenticity_token was value  -->
+
+  <%= submit_tag "Submit Post" %>
+<% end %>
