@@ -1,1 +1,10 @@
-<h1>Post Form</h1>
+<h3>Post Form</h3>
+<%= form_tag posts_path do %>
+  <label for="post_title">Post Title:</label><br>
+  <%= text_field_tag :'post[title]' %><br>
+
+  <label for="post_description">Post description:</label><br />
+  <%= text_area_tag :'post[description]' %><br>
+
+  <%= submit_tag "Submit Post" %>
+<% end %>
