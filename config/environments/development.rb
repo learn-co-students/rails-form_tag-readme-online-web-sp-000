@@ -1,5 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  
+#   class Application < Rails::Application
+#   config.web_console.whitelisted_ips = 'http://167.99.15.173:39257/'
+# end
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
