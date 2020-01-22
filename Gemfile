@@ -32,6 +32,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Add web-console so require code config.web_console.whitelist IPS in config/application.rb will run
+gem 'web-console'
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.7'
