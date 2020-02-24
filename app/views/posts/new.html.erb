@@ -1,0 +1,19 @@
+<h3>Post Form</h3>
+
+<%= form_tag posts_path do %><!--The form_tag method also automatically generates the necessary authenticity token, so we can remove the now-redundant hidden_field_tag.
+<form action="<%= posts_path %>" method="POST">
+Now the form redirects to /posts. However, we also need to add a method attribute so that the application knows that we are submitting form data via the POST HTTP verb-->
+  <label>Post title:</label><br>
+  <!--<input type="text" id="post_title" name="post[title]"><br>-->
+  <%= text_field_tag :'post[title]' %><br>
+
+  <label>Post description:</label><br>
+  <!--<textarea id="post_description" name="post[description]"></textarea><br>-->
+  <%= text_area_tag :'post[description]' %><br>
+  <!--<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">-->
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="submit" value="Submit Post">
+  <% end %>
+</form>
+ 
+<%= params.inspect %>
