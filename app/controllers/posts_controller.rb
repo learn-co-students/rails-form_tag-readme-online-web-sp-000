@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   end
 
   def new
-    #test
   end
 
   def create
