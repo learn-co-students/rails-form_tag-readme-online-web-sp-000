@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    #learn submit not working
+    
   end
 
   def create
