@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
   
   def new
-
+    byebug
   end
 
   def create
