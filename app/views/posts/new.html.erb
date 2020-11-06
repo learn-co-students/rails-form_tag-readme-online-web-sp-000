@@ -1,0 +1,56 @@
+<h3>Post Form</h3>
+<!--<form action="<%= posts_path %>" method="POST"> this will redirect us to /posts 
+  <label>Post title:</label><br>
+  <input type="text" id="post_title" name="post[title]"><br>
+ 
+  <label>Post description:</label><br>
+  <textarea id="post_description" name="post[description]"></textarea><br>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Submit Post">
+</form>
+ActionView, a sub-gem of Rails, provides a number of helper methods to assist 
+with streamlining view template code. 
+Specifically, we can use ActionView methods 
+to improve our form! 
+Let's start by integrating a Rails form_tag element:
+-->
+<!--<%= form_tag posts_path do %>
+  <label>Post title:</label><br>
+  <input type="text" id="post_title" name="post[title]"><br>
+ 
+  <label>Post description:</label><br>
+  <textarea id="post_description" name="post[description]"></textarea><br>
+  Next, we'll replace that hidden authenticity token input field 
+  with a Rails hidden_field_tag:
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  
+  <input type="submit" value="Submit Post">
+<% end %>
+ The form_tag Rails helper is smart enough to know that we want to submit the form 
+ via the POST method, and it automatically renders the HTML 
+ that we were writing by hand before. 
+ The form_tag method also automatically generates the necessary authenticity token, 
+ so we can remove the now-redundant hidden_field_tag.
+
+Next, let's integrate some other form helpers 
+to let Rails generate the input elements for us. 
+For this form, we'll be using a text_field_tag and a text_area_tag 
+and passing each the corresponding name attribute as a symbol. 
+It's important to keep in mind that form helpers aren't magic –– 
+they're simply Ruby methods that accept arguments, 
+such as the name attribute and any additional parameters 
+related to the form's elements. 
+In addition to updating the form fields, 
+we'll also replace the HTML tag for the submit button
+with a submit_tag.-->
+<%= form_tag posts_path do %>
+  <label>Post title:</label><br>
+  <%= text_field_tag :'post[title]' %><br>
+ 
+  <label>Post description:</label><br>
+  <%= text_area_tag :'post[description]' %><br>
+ 
+  <%= submit_tag "Submit Post" %>
+<% end %>
+<%= params.inspect %>
