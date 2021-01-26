@@ -1,0 +1,27 @@
+<h3>Post Form</h3>
+<form action="<%= posts_path %>" method=POST>
+BECOMES
+<%= form_tag posts_path do %>
+
+<label>Post Title:</label><br>
+
+<input type="text" id="post_title" name="post[title]">
+BECOMES
+<%= text_field_tag :'post[title]' %><br>
+
+<label>Post Description:</label><br>
+
+<textarea id="post_description" name="post[description]"></textarea>
+BECOMES
+<%= text_area_tag :'post[description]' %><br>
+
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+BECOMES
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+<input type="submit" value="Submit Post">
+BECOMES
+  <%= submit_tag "Submit Post" %>
+
+</form>
+<% end %>
